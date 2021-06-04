@@ -1,6 +1,6 @@
 import 'cypress-iframe'
 
-export function run(c_name, c_surname, c_email) {
+export function run(identity) {
     // Add first test booking steps will go here
     cy.frameLoaded('#widget-inline-embed')
     cy.wait(1000)
@@ -8,9 +8,9 @@ export function run(c_name, c_surname, c_email) {
     cy.iframe('#widget-inline-embed').find('#book-now-btn').click()
     cy.frameLoaded('#widget-inline-embed')
     cy.wait(4000)
-    cy.iframe('#widget-inline-embed').find('#first_name').type(c_name)
-    cy.iframe('#widget-inline-embed').find('#last_name').type(c_surname)
-    cy.iframe('#widget-inline-embed').find('#email').type(c_email)
+    cy.iframe('#widget-inline-embed').find('#first_name').type(identity.c_name)
+    cy.iframe('#widget-inline-embed').find('#last_name').type(identity.c_surname)
+    cy.iframe('#widget-inline-embed').find('#email').type(identity.c_email)
     cy.iframe('#widget-inline-embed').find('#mobile').type('0412345678')
     cy.iframe('#widget-inline-embed').find('button[type=submit]').click()
     cy.wait(2000)
