@@ -2,6 +2,9 @@ require('cypress-iframe')
 require('cypress-xpath')
 
 import * as utils from './app/utils'
+
+var identity = new utils.Identity()
+
 import * as auth from './ui/auth'
 import * as payment from './ui/payment'
 import * as booking from './ui/booking'
@@ -9,17 +12,12 @@ import * as booking from './ui/booking'
 
 describe('E2E', () => {
 
-  var identity = new utils.Identity()
-
-
   it('Merchant - Non Restaurant', () => {
 
     //auth.signup(identity)
     auth.login()
     payment.setup()
-    booking.add()
-
-    require('./ui/addBookings')(identity)
+    booking.add(identity)
 
     //Setup session service
     cy.contains('Setup').click({ force: true })
@@ -248,7 +246,7 @@ describe('E2E', () => {
     cy.wait(2000)
 
     //Create Session booking
-    cy.visit('https://groupon:groupontesting123@hotfix.nabooki.com/merchant/settings/integration/website')
+    cy.visit(`https://${Cypress.env('url')}/merchant/settings/integration/website`)
     cy.wait(1000)
     cy.xpath('//*[@id="multiselect-widget_options-required-container"]/button/span').click()
     cy.wait(1000)
@@ -302,7 +300,7 @@ describe('E2E', () => {
     // // })
 
     //Create Prepaid booking
-    cy.visit('https://groupon:groupontesting123@hotfix.nabooki.com/merchant/settings/integration/website')
+    cy.visit(`https://${Cypress.env('url')}/merchant/settings/integration/website`)
     cy.wait(1000)
     cy.xpath('//*[@id="multiselect-widget_options-required-container"]/button/span').click()
     cy.wait(1000)
@@ -340,7 +338,7 @@ describe('E2E', () => {
     })
 
     //Create a class booking
-    cy.visit('https://groupon:groupontesting123@hotfix.nabooki.com/merchant/settings/integration/website')
+    cy.visit(`https://${Cypress.env('url')}/merchant/settings/integration/website`)
     cy.wait(1000)
     cy.xpath('//*[@id="multiselect-widget_options-required-container"]/button/span').click()
     cy.wait(1000)
@@ -378,7 +376,7 @@ describe('E2E', () => {
     })
 
     //Create a booking for a sub-service
-    cy.visit('https://groupon:groupontesting123@hotfix.nabooki.com/merchant/settings/integration/website')
+    cy.visit(`https://${Cypress.env('url')}/merchant/settings/integration/website`)
     cy.wait(1000)
     cy.xpath('//*[@id="multiselect-widget_options-required-container"]/button/span').click()
     cy.wait(1000)
@@ -415,7 +413,7 @@ describe('E2E', () => {
 
 
     //Create a booking for Price category service
-    cy.visit('https://groupon:groupontesting123@hotfix.nabooki.com/merchant/settings/integration/website')
+    cy.visit(`https://${Cypress.env('url')}/merchant/settings/integration/website`)
     cy.wait(1000)
     cy.xpath('//*[@id="multiselect-widget_options-required-container"]/button/span').click()
     cy.wait(1000)
@@ -453,7 +451,7 @@ describe('E2E', () => {
 
 
     //Create unrestrictted partially prepaid booking
-    cy.visit('https://groupon:groupontesting123@hotfix.nabooki.com/merchant/settings/integration/website')
+    cy.visit(`https://${Cypress.env('url')}/merchant/settings/integration/website`)
     cy.wait(1000)
     cy.xpath('//*[@id="multiselect-widget_options-required-container"]/button/span').click()
     cy.wait(1000)
@@ -525,7 +523,7 @@ describe('E2E', () => {
     })
 
     //Create unrestrictted FULL prepaid booking
-    cy.visit('https://groupon:groupontesting123@hotfix.nabooki.com/merchant/settings/integration/website')
+    cy.visit(`https://${Cypress.env('url')}/merchant/settings/integration/website`)
     cy.wait(1000)
     cy.xpath('//*[@id="multiselect-widget_options-required-container"]/button/span').click()
     cy.wait(1000)
@@ -599,7 +597,7 @@ describe('E2E', () => {
     })
 
     //Create restricted partial prepaid booking
-    cy.visit('https://groupon:groupontesting123@hotfix.nabooki.com/merchant/settings/integration/website')
+    cy.visit(`https://${Cypress.env('url')}/merchant/settings/integration/website`)
     cy.wait(1000)
     cy.xpath('//*[@id="multiselect-widget_options-required-container"]/button/span').click()
     cy.wait(1000)
@@ -671,7 +669,7 @@ describe('E2E', () => {
     })
 
     //Create restricted fully prepaid booking
-    cy.visit('https://groupon:groupontesting123@hotfix.nabooki.com/merchant/settings/integration/website')
+    cy.visit(`https://${Cypress.env('url')}/merchant/settings/integration/website`)
     cy.wait(1000)
     cy.xpath('//*[@id="multiselect-widget_options-required-container"]/button/span').click()
     cy.wait(1000)
