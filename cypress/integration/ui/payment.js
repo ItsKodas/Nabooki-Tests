@@ -1,4 +1,4 @@
-export default function run() {
+export function setup() {
     //Setup Payment gateway
     cy.contains('Setup').click({ force: true })
     cy.contains('Online Payments').click({ force: true })

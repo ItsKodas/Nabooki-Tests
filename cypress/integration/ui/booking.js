@@ -1,6 +1,6 @@
 import 'cypress-iframe'
 
-export function run(identity) {
+export function add(identity) {
     // Add first test booking steps will go here
     cy.frameLoaded('#widget-inline-embed')
     cy.wait(1000)

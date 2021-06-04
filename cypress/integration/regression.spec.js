@@ -3,6 +3,8 @@ require('cypress-xpath')
 
 import * as utils from './app/utils'
 import * as auth from './ui/auth'
+import * as payment from './ui/payment'
+import * as booking from './ui/booking'
 
 
 describe('E2E', () => {
@@ -11,14 +13,13 @@ describe('E2E', () => {
 
 
   it('Merchant - Non Restaurant', () => {
-    cy.log(process.env.URL)
 
-    auth.signup(identity)
-    auth.login('alfred.p+test188@nabooki.com', 'QAtest123')
+    //auth.signup(identity)
+    auth.login()
+    payment.setup()
+    booking.add()
 
-    //require('./ui/ftu')()
-    //require('./ui/addBookings')(c_name, c_surname, c_email)
-    require('./ui/setupPayment')()
+    require('./ui/addBookings')(identity)
 
     //Setup session service
     cy.contains('Setup').click({ force: true })

@@ -1,2 +1,2 @@
 echo Downloading Packages...
-echo npm i cypress cypress-iframe faker dotenv
+echo npm i cypress cypress-iframe faker
