@@ -255,7 +255,7 @@ describe('E2E', () => {
     cy.get('.embed-calendar').invoke('text')
       .then((text) => {
         var widgetIframe = text;
-        var widgetURL = 'https://groupon:groupontesting123@' + widgetIframe.substring(419, 490);
+        var widgetURL = `https://${Cypress.env('url').split('@')[0]}@${widgetIframe.substring(419, 490)}`
         console.log(widgetIframe);
         console.log(widgetURL);
         cy.visit(widgetURL)
@@ -309,7 +309,7 @@ describe('E2E', () => {
     cy.get('.embed-calendar').invoke('text')
       .then((text) => {
         var widgetIframe = text;
-        var widgetURL = 'https://groupon:groupontesting123@' + widgetIframe.substring(419, 490);
+        var widgetURL = `https://${Cypress.env('url').split('@')[0]}@${widgetIframe.substring(419, 490)}`
         console.log(widgetIframe);
         console.log(widgetURL);
         cy.visit(widgetURL)
@@ -347,7 +347,7 @@ describe('E2E', () => {
     cy.get('.embed-calendar').invoke('text')
       .then((text) => {
         var widgetIframe = text;
-        var widgetURL = 'https://groupon:groupontesting123@' + widgetIframe.substring(419, 490);
+        var widgetURL = `https://${Cypress.env('url').split('@')[0]}@${widgetIframe.substring(419, 490)}`
         console.log(widgetIframe);
         console.log(widgetURL);
         cy.visit(widgetURL)
@@ -385,7 +385,7 @@ describe('E2E', () => {
     cy.get('.embed-calendar').invoke('text')
       .then((text) => {
         var widgetIframe = text;
-        var widgetURL = 'https://groupon:groupontesting123@' + widgetIframe.substring(419, 490);
+        var widgetURL = `https://${Cypress.env('url').split('@')[0]}@${widgetIframe.substring(419, 490)}`
         console.log(widgetIframe);
         console.log(widgetURL);
         cy.visit(widgetURL)
@@ -422,7 +422,7 @@ describe('E2E', () => {
     cy.get('.embed-calendar').invoke('text')
       .then((text) => {
         var widgetIframe = text;
-        var widgetURL = 'https://groupon:groupontesting123@' + widgetIframe.substring(419, 490);
+        var widgetURL = `https://${Cypress.env('url').split('@')[0]}@${widgetIframe.substring(419, 490)}`
         console.log(widgetIframe);
         console.log(widgetURL);
         cy.visit(widgetURL)
@@ -460,7 +460,7 @@ describe('E2E', () => {
     cy.get('.embed-calendar').invoke('text')
       .then((text) => {
         var widgetIframe = text;
-        var widgetURL = 'https://groupon:groupontesting123@' + widgetIframe.substring(419, 490);
+        var widgetURL = `https://${Cypress.env('url').split('@')[0]}@${widgetIframe.substring(419, 490)}`
         console.log(widgetIframe);
         console.log(widgetURL);
         cy.visit(widgetURL)
@@ -494,7 +494,7 @@ describe('E2E', () => {
       .then((href) => {
         var changeBooking = href;
         console.log(changeBooking);
-        var changeBookingURL = 'https://groupon:groupontesting123@' + changeBooking.substring(8, 84);
+        var changeBookingURL = `https://${Cypress.env('url').split('@')[0]}@${changeBooking.substring(8, 84)}`
         console.log(changeBookingURL);
         cy.visit(changeBookingURL)
       })
@@ -532,7 +532,7 @@ describe('E2E', () => {
     cy.get('.embed-calendar').invoke('text')
       .then((text) => {
         var widgetIframe = text;
-        var widgetURL = 'https://groupon:groupontesting123@' + widgetIframe.substring(419, 490);
+        var widgetURL = `https://${Cypress.env('url').split('@')[0]}@${widgetIframe.substring(419, 490)}`
         console.log(widgetIframe);
         console.log(widgetURL);
         cy.visit(widgetURL)
@@ -569,7 +569,7 @@ describe('E2E', () => {
       .then((href) => {
         var changeBooking = href;
         console.log(changeBooking);
-        var changeBookingURL = 'https://groupon:groupontesting123@' + changeBooking.substring(8, 84);
+        var changeBookingURL = `https://${Cypress.env('url').split('@')[0]}@${changeBooking.substring(8, 84)}`
         console.log(changeBookingURL);
         cy.visit(changeBookingURL)
       })
@@ -606,7 +606,7 @@ describe('E2E', () => {
     cy.get('.embed-calendar').invoke('text')
       .then((text) => {
         var widgetIframe = text;
-        var widgetURL = 'https://groupon:groupontesting123@' + widgetIframe.substring(419, 490);
+        var widgetURL = `https://${Cypress.env('url').split('@')[0]}@${widgetIframe.substring(419, 490)}`
         console.log(widgetIframe);
         console.log(widgetURL);
         cy.visit(widgetURL)
@@ -643,7 +643,7 @@ describe('E2E', () => {
       .then((href) => {
         var changeBooking = href;
         console.log(changeBooking);
-        var changeBookingURL = 'https://groupon:groupontesting123@' + changeBooking.substring(8, 84);
+        var changeBookingURL = `https://${Cypress.env('url').split('@')[0]}@${changeBooking.substring(8, 84)}`
         console.log(changeBookingURL);
         cy.visit(changeBookingURL)
       })
@@ -678,7 +678,7 @@ describe('E2E', () => {
     cy.get('.embed-calendar').invoke('text')
       .then((text) => {
         var widgetIframe = text;
-        var widgetURL = 'https://groupon:groupontesting123@' + widgetIframe.substring(419, 490);
+        var widgetURL = `https://${Cypress.env('url').split('@')[0]}@${widgetIframe.substring(419, 490)}`
         console.log(widgetIframe);
         console.log(widgetURL);
         cy.visit(widgetURL)
@@ -715,7 +715,7 @@ describe('E2E', () => {
       .then((href) => {
         var changeBooking = href;
         console.log(changeBooking);
-        var changeBookingURL = 'https://groupon:groupontesting123@' + changeBooking.substring(8, 84);
+        var changeBookingURL = `https://${Cypress.env('url').split('@')[0]}@${changeBooking.substring(8, 84)}`
         console.log(changeBookingURL);
         cy.visit(changeBookingURL)
       })
