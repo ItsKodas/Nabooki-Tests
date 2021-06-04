@@ -8,7 +8,7 @@ import * as auth from './ui/auth'
 
 describe('E2E', () => {
 
-  var person = new utils.Credentials()
+  var person = new utils.Credentials();
   
 
   it('Merchant - Non Restaurant', () => {
