@@ -1,5 +1,5 @@
 export function signup(identity) {
-    cy.visit(`https://${Cypress.env('url')}/setup/account/nb?industry=other-sub-d`)
+    cy.visit(`https://${Cypress.env('basic_auth')}/setup/account/nb?industry=other-sub-d`)
     cy.get('#manager_first_name').type(identity.first)
     cy.get('#manager_last_name').type(identity.last)
     cy.get('#email').type(identity.email)
@@ -12,7 +12,7 @@ export function signup(identity) {
 }
 
 export function login() {
-    cy.visit(`https://${Cypress.env('url')}/auth/login/nb`)
+    cy.visit(`https://${Cypress.env('basic_auth')}/auth/login/nb`)
     cy.get('#email').type(Cypress.env('email'))
     cy.get('#password').type(Cypress.env('password'))
     cy.get('button[type=submit]').first().click()
