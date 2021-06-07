@@ -17,7 +17,7 @@ export function CreateSingle(identity) {
     cy.wait(2000)
 }
 
-export function CreateSession() {
+export function CreateSession(identity) {
     //Create Session booking
     cy.visit(`https://${Cypress.env('basic_auth')}/merchant/settings/integration/website`)
     cy.wait(1000)
@@ -62,7 +62,6 @@ export function CreateSession() {
     cy.wait(2000)
     cy.get('.text-capitalize').should(($bookingConfirmation) => {
         expect($bookingConfirmation).to.contain('Booking Confirmed')
-
     })
     // // cy.xpath('//*[@id="bodyBookingwidget"]/div[3]/div[1]/div/div[2]/div[2]/ul/li[2]').should(($sessionBooked) => {
     // // expect($sessionBooked).to.contain('2\n of 10 Sessions\n booked')
@@ -73,7 +72,7 @@ export function CreateSession() {
     // // })
 }
 
-export function CreatePrepaid() {
+export function CreatePrepaid(identity) {
     //Create Prepaid booking
     cy.visit(`https://${Cypress.env('basic_auth')}/merchant/settings/integration/website`)
     cy.wait(1000)
@@ -113,7 +112,7 @@ export function CreatePrepaid() {
     })
 }
 
-export function CreateClass() {
+export function CreateClass(identity) {
     //Create a class booking
     cy.visit(`https://${Cypress.env('basic_auth')}/merchant/settings/integration/website`)
     cy.wait(1000)
@@ -153,7 +152,7 @@ export function CreateClass() {
     })
 }
 
-export function CreateSubService() {
+export function CreateSubService(identity) {
     //Create a booking for a sub-service
     cy.visit(`https://${Cypress.env('basic_auth')}/merchant/settings/integration/website`)
     cy.wait(1000)
@@ -191,7 +190,7 @@ export function CreateSubService() {
     })
 }
 
-export function CreatePriceCategoryService() {
+export function CreatePriceCategoryService(identity) {
     //Create a booking for Price category service
     cy.visit(`https://${Cypress.env('basic_auth')}/merchant/settings/integration/website`)
     cy.wait(1000)
@@ -230,7 +229,7 @@ export function CreatePriceCategoryService() {
     })
 }
 
-export function CreateUnrestricttedPartiallyPrepaid() {
+export function CreateUnrestricttedPartiallyPrepaid(identity) {
     //Create unrestrictted partially prepaid booking
     cy.visit(`https://${Cypress.env('basic_auth')}/merchant/settings/integration/website`)
     cy.wait(1000)
@@ -307,7 +306,7 @@ export function ChangeUnrestricttedPartiallyPrepaid() {
     })
 }
 
-export function CreateUnrestricttedFullPrepaid() {
+export function CreateUnrestricttedFullPrepaid(identity) {
     //Create unrestrictted FULL prepaid booking
     cy.visit(`https://${Cypress.env('basic_auth')}/merchant/settings/integration/website`)
     cy.wait(1000)
@@ -385,7 +384,7 @@ export function ChangeUnrestricttedFullyPrepaid() {
     })
 }
 
-export function CreateRestrictedPartialPrepaid() {
+export function CreateRestrictedPartialPrepaid(identity) {
     //Create restricted partial prepaid booking
     cy.visit(`https://${Cypress.env('basic_auth')}/merchant/settings/integration/website`)
     cy.wait(1000)
@@ -461,7 +460,7 @@ export function ChangeRestricttedPartiallyPrepaid() {
     })
 }
 
-export function CreateRestrictedFullyPrepaid() {
+export function CreateRestrictedFullyPrepaid(identity) {
     //Create restricted fully prepaid booking
     cy.visit(`https://${Cypress.env('basic_auth')}/merchant/settings/integration/website`)
     cy.wait(1000)

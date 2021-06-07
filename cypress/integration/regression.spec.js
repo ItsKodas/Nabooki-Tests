@@ -17,14 +17,10 @@ describe('E2E', () => {
 
   it('Merchant - Non Restaurant', () => {
 
-    //auth.signup(identity)
     auth.login()
     //payment.setupGateway()
-    //booking.add(identity)
+    //booking.CreateSingle(identity)
+    booking.CreateSession(identity)
 
-
-    
-
-    
   })
 })
