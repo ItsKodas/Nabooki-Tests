@@ -18,9 +18,8 @@ describe('E2E', () => {
   it('Merchant - Non Restaurant', () => {
 
     auth.login()
-    //payment.setupGateway()
-    //booking.CreateSingle(identity)
-    booking.CreateSession(identity)
+
+    service.setupSchedual(identity)
 
   })
 })

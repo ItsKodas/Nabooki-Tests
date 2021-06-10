@@ -15,7 +15,8 @@ export function setupSession() {
 }
 
 export function setupSchedual() {
-    //Setup Schedule Service   
+    //Setup Schedule Service
+    cy.visit(`https://${Cypress.env('basic_auth')}/merchant/settings/services`)
     cy.get('.fa-user-plus').click({ force: true })
     cy.get('#name').type('Test Schedule Service')
     cy.get('#duration_hours').select('1 hrs')
@@ -23,6 +24,17 @@ export function setupSchedual() {
     cy.get('#btn-services-general').click()
     cy.wait(1000)
     cy.get('[data-time="09:00:00"]').click()
+
+    //cy.get('#manageServiceLocationScheduleEventModal iframe').click()
+    cy.get('#manageServiceLocationScheduleEventModal iframe').invoke('text')
+        .then((text) => {
+            var widgetIframe = text;
+            var widgetURL = `https://${Cypress.env('basic_auth').split('@')[0]}@${widgetIframe.substring(419, 490)}`
+            console.log(widgetIframe);
+            console.log(widgetURL);
+            cy.visit(widgetURL)
+
+        })
 
     cy.iframe('#manageServiceLocationScheduleEventModal iframe').find('').type('0412345678')
 
